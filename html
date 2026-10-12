@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulisan Berjalan RGB</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #0f0f0f; /* Latar belakang gelap agar warna RGB semakin kontras */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .marquee-container {
+            width: 85%;
+            max-width: 700px;
+            overflow: hidden;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 2.5rem;
+            font-weight: bold;
+            
+            /* Animasi Berjalan dari Kanan ke Kiri */
+            animation: jalan 12s linear infinite, rgb-color 4s linear infinite;
+        }
+
+        /* Keyframes untuk pergerakan teks */
+        @keyframes jalan {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Keyframes untuk perubahan warna RGB otomatis */
+        @keyframes rgb-color {
+            0%   { color: #ff0000; text-shadow: 0 0 15px rgba(255, 0, 0, 0.7); }
+            20%  { color: #ff8000; text-shadow: 0 0 15px rgba(255, 128, 0, 0.7); }
+            40%  { color: #ffff00; text-shadow: 0 0 15px rgba(255, 255, 0, 0.7); }
+            60%  { color: #00ff00; text-shadow: 0 0 15px rgba(0, 255, 0, 0.7); }
+            80%  { color: #00ffff; text-shadow: 0 0 15px rgba(0, 255, 255, 0.7); }
+            100% { color: #ff00ff; text-shadow: 0 0 15px rgba(255, 0, 255, 0.7); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-container">
+        <div class="marquee-text">Selamat Datang dan Sukses</div>
+    </div>
+
+</body>
+          </html>
+          
